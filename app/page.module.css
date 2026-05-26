@@ -1,0 +1,362 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #d8f0c8;
+}
+
+.swampLayer {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(8, 42, 68, 0.9) 0%, transparent 55%),
+    linear-gradient(180deg, #0b1f3a 0%, #123a5c 38%, #1a5f7a 68%, #0e3d52 100%);
+  z-index: 0;
+}
+
+.reedsLayer {
+  position: absolute;
+  inset: auto 0 18% 0;
+  height: 28%;
+  background:
+    repeating-linear-gradient(
+      -8deg,
+      rgba(26, 95, 122, 0.55) 0 18px,
+      rgba(14, 61, 82, 0.45) 18px 36px
+    );
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.mudLayer {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 32%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #6b4423 0 48px,
+      #5a381c 48px 52px,
+      #7a4f2b 52px 100px
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45));
+  border-top: 4px solid #c9a227;
+  z-index: 2;
+}
+
+.bunkerLayer {
+  position: absolute;
+  inset: auto 0 28% 0;
+  height: 8%;
+  background: linear-gradient(180deg, #8b5a2b, #5c3a1e);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+  z-index: 3;
+}
+
+.crocSilhouette {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  width: 72px;
+  height: 48px;
+  background: linear-gradient(135deg, #1a1a1a 45%, transparent 45%),
+    linear-gradient(-45deg, #fff 45%, transparent 45%),
+    #b91c1c;
+  clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+  opacity: 0.75;
+  z-index: 3;
+}
+
+.card {
+  position: relative;
+  z-index: 4;
+  width: min(96vw, 560px);
+  border-radius: 20px;
+  padding: 20px;
+  background: rgba(18, 28, 42, 0.88);
+  border: 2px solid rgba(201, 162, 39, 0.45);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 24px rgba(0, 0, 0, 0.45),
+    inset 0 0 40px rgba(201, 162, 39, 0.06);
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(1.7rem, 6vw, 2.6rem);
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+  color: #ffd978;
+  text-shadow:
+    0 2px 0 #5c3a1e,
+    0 0 16px rgba(255, 217, 120, 0.35);
+}
+
+.playerLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: rgba(30, 48, 68, 0.7);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(201, 162, 39, 0.25);
+}
+
+.walletPanel {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.walletOptions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.disconnectButton {
+  border: 1px solid rgba(255, 217, 141, 0.45);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #ffd98d;
+  background: rgba(10, 20, 32, 0.5);
+  cursor: pointer;
+}
+
+.warning {
+  margin: 8px 0 14px;
+  color: #ffd98d;
+  text-align: center;
+}
+
+.error {
+  margin: 8px 0 12px;
+  color: #ff9fa9;
+  text-align: center;
+}
+
+.scorePanel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.scorePanel > div {
+  background: rgba(24, 40, 58, 0.75);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+}
+
+.metaLabel {
+  font-size: 0.78rem;
+  opacity: 0.84;
+  color: #c9d4e8;
+}
+
+.metaValue {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-top: 4px;
+  color: #ffe9a8;
+}
+
+.menuButtons,
+.viewBlock {
+  display: grid;
+  gap: 10px;
+}
+
+.swampButton,
+.smallButton,
+.backButton {
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  color: #fff8e7;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(180deg, #9a6b2e 0%, #6d4518 100%);
+  box-shadow:
+    0 2px 0 #3f2810,
+    0 8px 16px rgba(0, 0, 0, 0.35),
+    0 0 12px rgba(255, 200, 90, 0.2);
+  border: 1px solid rgba(255, 220, 140, 0.35);
+}
+
+.smallButton {
+  width: 140px;
+  justify-self: center;
+  font-size: 0.86rem;
+  padding: 8px;
+}
+
+.backButton {
+  margin-top: 14px;
+  width: 100%;
+}
+
+.swampButton:disabled,
+.backButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tankButton {
+  border: none;
+  border-radius: 22px;
+  padding: 18px;
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  cursor: pointer;
+  background:
+    radial-gradient(circle at 50% 35%, #4a5568 0%, #2d3748 45%, #1a202c 85%),
+    linear-gradient(180deg, #718096, #2d3748);
+  color: #fff;
+  border: 3px solid rgba(201, 162, 39, 0.55);
+  box-shadow:
+    inset 0 -12px 24px rgba(0, 0, 0, 0.45),
+    0 0 22px rgba(255, 180, 60, 0.25);
+  transition: transform 0.08s ease;
+}
+
+.tankButton:active {
+  transform: scale(0.96) translateY(2px);
+}
+
+.tankButton:disabled {
+  opacity: 0.6;
+}
+
+.tankVisual {
+  position: relative;
+  width: min(220px, 70vw);
+  height: 120px;
+  display: grid;
+  place-items: center;
+}
+
+.tankHull {
+  width: 78%;
+  height: 52px;
+  border-radius: 26px 8px 8px 26px;
+  background: linear-gradient(180deg, #a0aec0 0%, #4a5568 55%, #2d3748 100%);
+  border: 2px solid #cbd5e0;
+  box-shadow: inset -8px 0 16px rgba(0, 0, 0, 0.35);
+  transform: rotate(-4deg);
+}
+
+.tankTrack {
+  position: absolute;
+  bottom: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8b5a2b, #3f2810);
+  border: 3px solid #c9a227;
+}
+
+.tankTrackLeft {
+  left: 18%;
+}
+
+.tankTrackRight {
+  right: 18%;
+}
+
+.tankHitFlash {
+  position: absolute;
+  right: 4%;
+  top: 28%;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+}
+
+.tankButton:active .tankHitFlash {
+  opacity: 1;
+}
+
+.tankCaption {
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  color: #ffe9a8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.hint {
+  text-align: center;
+  font-size: 0.86rem;
+  opacity: 0.9;
+  color: #d4e8ff;
+}
+
+.checkinText {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.timer {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffd978;
+}
+
+.leaderboard {
+  margin-top: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(8, 20, 36, 0.75);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.leaderboardRow {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.leaderboardRow:last-child {
+  border-bottom: none;
+}
+
+
+.crocOnTank {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  font-size: 2.4rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+
+.tankHull {
+  position: relative;
+}
+
+.crocSilhouette {
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  font-size: 3rem;
+  opacity: 0.35;
+  z-index: 3;
+  content: "🐊";
+}

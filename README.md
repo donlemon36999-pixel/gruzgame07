@@ -1,0 +1,30 @@
+# Gruz Game 07 — Croco Tank Tap
+
+Base App mini app for **donlemon36999-pixel** (Next.js + wagmi + Farcaster Mini App SDK).
+
+## Config (hardcoded, no Vercel env)
+
+| Item | Value |
+|------|--------|
+| Contract (Base Mainnet) | [0x28C2A59D2E10640f5Aa4f1B469F8F76d53cC3A85](https://basescan.org/address/0x28C2A59D2E10640f5Aa4f1B469F8F76d53cC3A85) |
+| Check-in price | `0.00001` ETH |
+| Builder code / suffix | `lib/contracts/gruzgame07Onchain.ts` (fill when ready) |
+
+**Vercel:** no dashboard env required. Public URL from `VERCEL_PROJECT_PRODUCTION_URL` / `VERCEL_URL` via `lib/siteUrl.ts`.
+
+Optional local URL: `.env.local` with `NEXT_PUBLIC_URL=http://localhost:3000`
+
+## Onchain tx
+
+`encodeFunctionData` → `withGruzGame07BuilderCodeDataSuffix()` → `sendTransaction` to `GRUZGAME07_CONTRACT_ADDRESS`.
+
+## Run
+
+```bash
+npm install
+npm run dev
+```
+
+## Deploy contract
+
+`contracts/GruzGame07Onchain.sol` — Remix, Base Mainnet.

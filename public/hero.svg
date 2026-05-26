@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Croco Tank Tap">
+  <defs>
+    <linearGradient id="swamp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d6b3a"/>
+      <stop offset="100%" stop-color="#0f2818"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#swamp)"/>
+  <rect y="340" width="512" height="172" fill="#3d2914"/>
+  <rect x="96" y="220" width="320" height="120" rx="18" fill="#4a5d23" stroke="#8fbc5a" stroke-width="6"/>
+  <rect x="320" y="200" width="90" height="36" rx="8" fill="#5a6e2f"/>
+  <circle cx="150" cy="360" r="44" fill="#2a2418" stroke="#6b8f4e" stroke-width="8"/>
+  <circle cx="362" cy="360" r="44" fill="#2a2418" stroke="#6b8f4e" stroke-width="8"/>
+  <text x="256" y="290" text-anchor="middle" font-size="72">=
+</text>
+  <text x="256" y="120" text-anchor="middle" fill="#c8f0a0" font-family="Arial,sans-serif" font-size="42" font-weight="700">CROCO TANK</text>
+</svg>
