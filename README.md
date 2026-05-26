@@ -6,6 +6,7 @@ Base App mini app for **donlemon36999-pixel** (Next.js + wagmi + Farcaster Mini 
 
 | Item | Value |
 |------|--------|
+| Base App ID | `6a158bc4e2595c07fbb7fdeb` → `lib/appConfig.ts` + `<meta name="base:app_id">` |
 | Contract (Base Mainnet) | [0x28C2A59D2E10640f5Aa4f1B469F8F76d53cC3A85](https://basescan.org/address/0x28C2A59D2E10640f5Aa4f1B469F8F76d53cC3A85) |
 | Check-in price | `0.00001` ETH |
 | Builder code / suffix | `lib/contracts/gruzgame07Onchain.ts` (fill when ready) |

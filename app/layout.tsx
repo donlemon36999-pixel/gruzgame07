@@ -1,24 +1,25 @@
-import type { Metadata } from 'next';
-import { Inter, Source_Code_Pro } from 'next/font/google';
-import { SafeArea } from './components/SafeArea';
-import { farcasterConfig } from '../farcaster.config';
-import { Providers } from './providers';
-import './globals.css';
+import type { Metadata } from "next";
+import { Inter, Source_Code_Pro } from "next/font/google";
+import { SafeArea } from "./components/SafeArea";
+import { BASE_APP_ID } from "@/lib/appConfig";
+import { farcasterConfig } from "../farcaster.config";
+import { Providers } from "./providers";
+import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: farcasterConfig.miniapp.name,
     description: farcasterConfig.miniapp.description,
     other: {
-      'base:app_id': '6a145b6eed0edcf2e9a87709',
-      'fc:frame': JSON.stringify({
+      "base:app_id": BASE_APP_ID,
+      "fc:frame": JSON.stringify({
         version: farcasterConfig.miniapp.version,
         imageUrl: farcasterConfig.miniapp.heroImageUrl,
         button: {
           title: farcasterConfig.miniapp.buttonTitle,
           action: {
-            name: 'Launch',
-            type: 'launch_frame',
+            name: "Launch",
+            type: "launch_frame",
           },
         },
       }),
@@ -27,13 +28,13 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
+  variable: "--font-inter",
+  subsets: ["latin"],
 });
 
 const sourceCodePro = Source_Code_Pro({
-  variable: '--font-source-code-pro',
-  subsets: ['latin'],
+  variable: "--font-source-code-pro",
+  subsets: ["latin"],
 });
 
 export default function RootLayout({
@@ -42,7 +43,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
+      <head>
+        <meta name="base:app_id" content={BASE_APP_ID} />
+      </head>
       <body className={`${inter.variable} ${sourceCodePro.variable}`} suppressHydrationWarning>
         <Providers>
           <SafeArea>{children}</SafeArea>
