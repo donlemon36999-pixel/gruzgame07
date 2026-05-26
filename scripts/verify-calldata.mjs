@@ -1,13 +1,14 @@
+/**
+ * Verify tap calldata includes builder suffix. Run: node scripts/verify-calldata.mjs
+ */
 import { encodeFunctionData } from "viem";
-import { Attribution } from "ox/erc8021";
 
-const BUILDER_CODE = "bc_w6mg1cwt";
-const suffix = Attribution.toDataSuffix({ codes: [BUILDER_CODE] }).slice(2);
-const withSuffix = (data) => `${data}${suffix}`;
+const BUILDER_CODE = "bc_9p8ygfen";
+const BUILDER_SUFFIX = "0x62635f397038796766656e0b0080218021802180218021802180218021";
 
 const abi = [
   {
-    inputs: [{ internalType: "uint256", name: "tapsCount", type: "uint256" }],
+    inputs: [{ name: "tapsCount", type: "uint256" }],
     name: "tap",
     outputs: [],
     stateMutability: "nonpayable",
@@ -24,9 +25,9 @@ const abi = [
 
 const tap = encodeFunctionData({ abi, functionName: "tap", args: [3n] });
 const checkIn = encodeFunctionData({ abi, functionName: "checkIn" });
+const suffix = BUILDER_SUFFIX.slice(2);
 
-console.log("Builder code:", BUILDER_CODE);
-console.log("Expected suffix:", `0x${suffix}`);
-console.log("");
-console.log("tap(3):", withSuffix(tap));
-console.log("checkIn():", withSuffix(checkIn));
+console.log("builder code:", BUILDER_CODE);
+console.log("tap calldata:", `${tap}${suffix}`);
+console.log("checkIn calldata:", `${checkIn}${suffix}`);
+console.log("tap ends with suffix:", `${tap}${suffix}`.endsWith(suffix));

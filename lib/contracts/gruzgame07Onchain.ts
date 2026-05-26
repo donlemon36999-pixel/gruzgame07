@@ -4,9 +4,10 @@ export const GRUZGAME07_CONTRACT_ADDRESS: `0x${string}` =
 
 export const GRUZGAME07_CHECKIN_PRICE_ETH = "0.00001";
 
-/** Set after base.dev → Builder Codes (gruzgame07). Empty = no suffix appended. */
-export const GRUZGAME07_BUILDER_CODE = "";
-export const GRUZGAME07_BUILDER_CODE_DATA_SUFFIX: `0x${string}` = "0x";
+/** base.dev → Builder Codes (gruzgame07 / donlemon36999-pixel) */
+export const GRUZGAME07_BUILDER_CODE = "bc_9p8ygfen";
+export const GRUZGAME07_BUILDER_CODE_DATA_SUFFIX: `0x${string}` =
+  "0x62635f397038796766656e0b0080218021802180218021802180218021";
 
 export const gruzGame07OnchainAbi = [
   {
