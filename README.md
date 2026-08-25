@@ -19,7 +19,7 @@ Optional local URL: `.env.local` with `NEXT_PUBLIC_URL=http://localhost:3000`
 ## Onchain tx
 
 `encodeFunctionData` → `withGruzGame07BuilderCodeDataSuffix()` → `sendTransaction` to `GRUZGAME07_CONTRACT_ADDRESS`.
-
+hvert
 ## Run
 
 ```bash
