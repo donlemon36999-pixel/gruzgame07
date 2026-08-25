@@ -11,7 +11,7 @@ Base App mini app for **donlemon36999-pixel** (Next.js + wagmi + Farcaster Mini 
 | Check-in price | `0.00001` ETH |
 | Builder code | `bc_9p8ygfen` |
 | Builder calldata suffix | `0x62635f397038796766656e0b0080218021802180218021802180218021` |
-
+zxv
 **Vercel:** no dashboard env required. Public URL from `VERCEL_PROJECT_PRODUCTION_URL` / `VERCEL_URL` via `lib/siteUrl.ts`.
 
 Optional local URL: `.env.local` with `NEXT_PUBLIC_URL=http://localhost:3000`
