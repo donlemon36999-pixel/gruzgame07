@@ -30,3 +30,5 @@ npm run dev
 ## Deploy contract
 
 `contracts/GruzGame07Onchain.sol` — Remix, Base Mainnet.
+hghg
+hgr
